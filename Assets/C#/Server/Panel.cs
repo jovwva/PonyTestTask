@@ -28,6 +28,10 @@ public class Panel : MonoBehaviour
 
     public void SendNewMessage(string message)
     {
+        if (message == "")
+        {
+            return;
+        }
         MessageData newMessage = new MessageData(GetActualTime(), message, "PonyQA", openPanelType);
         localDataStorage.AddMessage(newMessage);
         

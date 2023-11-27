@@ -453,7 +453,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 71.5875}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &283457910
 MonoBehaviour:
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_HideSoftKeyboard: 0
   m_CharacterValidation: 0
   m_RegexValue: 
-  m_GlobalPointSize: 14
+  m_GlobalPointSize: 22
   m_CharacterLimit: 128
   m_OnEndEdit:
     m_PersistentCalls:
@@ -1620,6 +1620,7 @@ GameObject:
   - component: {fileID: 1390887121}
   - component: {fileID: 1390887123}
   - component: {fileID: 1390887122}
+  - component: {fileID: 1390887124}
   m_Layer: 5
   m_Name: ChatPanel
   m_TagString: Untagged
@@ -1646,10 +1647,10 @@ RectTransform:
   - {fileID: 827971864}
   m_Father: {fileID: 1546272603}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0.4}
-  m_AnchoredPosition: {x: -189.5, y: 0}
-  m_SizeDelta: {x: -379, y: 0}
+  m_AnchorMin: {x: 0.005, y: 0.01111111}
+  m_AnchorMax: {x: 0.305, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390887122
 MonoBehaviour:
@@ -1689,6 +1690,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390887120}
   m_CullTransparentMesh: 1
+--- !u!114 &1390887124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390887120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83b550f30ef04c45bfa2e84ca74eecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1546272602}
 --- !u!1 &1546272599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,8 +1979,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2050,10 +2064,10 @@ RectTransform:
   - {fileID: 1060306947}
   m_Father: {fileID: 1390887121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.111685194}
+  m_AnchorMin: {x: 0, y: 0.14957576}
   m_AnchorMax: {x: 1, y: 0.88600004}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_SizeDelta: {x: 0, y: 0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845023885
 MonoBehaviour:
@@ -2397,8 +2411,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
