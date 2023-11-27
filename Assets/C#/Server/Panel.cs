@@ -1,9 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using PonyTestTask;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Panel : MonoBehaviour
 {
@@ -11,19 +11,25 @@ public class Panel : MonoBehaviour
     [SerializeField] private GameObject messageTextBox;
     [SerializeField] private Transform  messageParent;
     [SerializeField] private ContentCleaner ContentCleaner;
+    [Space]
+    [Header("UI эллементы")]
     [SerializeField] private TMP_InputField inputField;
-    // [SerializeField] private 
+    [SerializeField] private List<Image> panelButtonList;
+     
     [Space]
     [Header("Динамические данные")]
     [SerializeField] private MessageType openPanelType = MessageType.Empty;
 
     private LocalDataStorage    localDataStorage;
     private TimeZoneInfo        playerTimeZone;
+    private Color               selectColor = new Color(0.13f, 0.65f, 0.5f, 1f);
 
     private void Start()
     {
         playerTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time");
         localDataStorage = new LocalDataStorage();
+
+        panelButtonList[0].color = selectColor;
     }
 
     public void SendNewMessage(string message)
@@ -50,7 +56,9 @@ public class Panel : MonoBehaviour
         }
 
         ContentCleaner.ClearPanel();
+        panelButtonList[(int) openPanelType].color = Color.white;
         openPanelType = panelType;
+        panelButtonList[(int) openPanelType].color = selectColor;
 
         List<MessageData> messageDataList = new List<MessageData>();
         if (openPanelType == MessageType.Empty)
