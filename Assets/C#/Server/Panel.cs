@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using PonyTestTask;
+using TMPro;
 using UnityEngine;
 
 public class Panel : MonoBehaviour
@@ -9,6 +10,9 @@ public class Panel : MonoBehaviour
     [Header("Статичные данные")]
     [SerializeField] private GameObject messageTextBox;
     [SerializeField] private Transform  messageParent;
+    [SerializeField] private ContentCleaner ContentCleaner;
+    [SerializeField] private TMP_InputField inputField;
+    // [SerializeField] private 
     [Space]
     [Header("Динамические данные")]
     [SerializeField] private MessageType openPanelType = MessageType.Empty;
@@ -20,23 +24,16 @@ public class Panel : MonoBehaviour
     {
         playerTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Russian Standard Time");
         localDataStorage = new LocalDataStorage();
-
-        SendNewMessage("Hello world! Empty_1");
-        SendNewMessage("Hello world! Empty_2");
-
-        openPanelType = MessageType.Factional;
-        SendNewMessage("Hello world! Factional_1");
-
-        openPanelType = MessageType.Personal;
-        SendNewMessage("Hello world! Personal_1");
-
-        openPanelType = MessageType.Empty;
     }
 
     public void SendNewMessage(string message)
     {
         MessageData newMessage = new MessageData(GetActualTime(), message, "PonyQA", openPanelType);
         localDataStorage.AddMessage(newMessage);
+        
+        // inputField.Restore();
+        inputField.text = "";
+
         ShowMessage(newMessage);
     }
     // public void ChangePanel(MessageType openPanelType)
@@ -48,7 +45,7 @@ public class Panel : MonoBehaviour
             return;
         }
 
-        // ClearTextPanel();
+        ContentCleaner.ClearPanel();
         openPanelType = panelType;
 
         List<MessageData> messageDataList = new List<MessageData>();
